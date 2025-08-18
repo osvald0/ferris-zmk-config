@@ -19,6 +19,120 @@
     };
 
 
+    macros {
+        ss_window: ss_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LG(NUMBER_4)) &kp SPACE>;
+            label = "SS_WINDOW";
+        };
+
+        tmux_t_0: tmux_t_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_0>;
+            label = "TMUX_T_0";
+        };
+
+        tmux_t_1: tmux_t_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_1>;
+            label = "TMUX_T_1";
+        };
+
+        tmux_t_2: tmux_t_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_2>;
+            label = "TMUX_T_2";
+        };
+
+        tmux_t_3: tmux_t_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_3>;
+            label = "TMUX_T_3";
+        };
+
+        tmux_t_4: tmux_t_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_4>;
+            label = "TMUX_T_4";
+        };
+
+        tmux_t_5: tmux_t_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_5>;
+            label = "TMUX_T_5";
+        };
+
+        tmux_t_6: tmux_t_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp NUMBER_6>;
+            label = "TMUX_T_6";
+        };
+
+        tmux_t_prev: tmux_t_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp P>;
+            label = "TMUX_T_PREV";
+        };
+
+        tmux_t_next: tmux_t_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp N>;
+            label = "TMUX_T_NEXT";
+        };
+
+        tmux_t_new: tmux_t_new {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp C>;
+            label = "TMUX_T_NEW";
+        };
+
+        tmux_s_switch: tmux_s_switch {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp S>;
+            label = "TMUX_S_SWITCH";
+        };
+
+        tmux_t_delete: tmux_t_delete {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp AMPERSAND>;
+            label = "TMUX_T_DELETE";
+        };
+
+        nvim_search_grep: nvim_search_grep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp S &kp LS(G)>;
+            label = "NVIM_SEARCH_GREP";
+        };
+
+        nvim_search_todo: nvim_search_todo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE &kp S &kp LS(T)>;
+            label = "NVIM_SEARCH_TODO";
+        };
+
+        nvim_select_around: nvim_select_around {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp V &kp I &kp W &kp G &kp S &kp A>;
+            label = "NVIM_SELECT_AROUND";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
