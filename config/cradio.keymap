@@ -169,12 +169,13 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             bindings = <
             &kp Q      &kp W      &kp E      &kp R      &ht 4 T          &ht 4 Y      &kp U      &kp I      &kp O      &kp P
             HRML(A,        S,         D,         F)     &ht 3 G          &ht 3 H       HRMR(J,        K,         L,        SQT)
             &kp Z      &kp X      &kp C      &kp V      &ht 5 B          &ht 5 N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-                                            &lt 1 BACKSPACE &lt 2 ESC &lt 2 ENTER  &lt SPACE  
+                                            &lt 1 BACKSPACE   &lt 2 ESC   &lt 2 ENTER   &lt SPACE  
             >;
         };
 
