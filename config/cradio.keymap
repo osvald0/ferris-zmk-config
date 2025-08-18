@@ -149,7 +149,7 @@
         tab {
             bindings = <&kp TAB>;
             key-positions = <3 2>;
-        };3
+        };
 
         start {
             bindings = <&kp NUMBER_0>;
