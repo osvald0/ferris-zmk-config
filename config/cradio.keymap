@@ -159,6 +159,7 @@
             &kp LS(LG(NUMBER_4))  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
             &ss_window            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
                                                               &trans        &trans          &mkp LCLK       &mkp RCLK
+            >;
         };
 
         tmux_nvim_layer {
