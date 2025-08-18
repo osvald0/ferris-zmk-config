@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define HRML(k1,k2,k3,k4) &ht LALT k1 &ht LGUI k2 &ht LCTRL k3 &ht LSHFT k4 
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1 &ht RCTRL k2  &ht RGUI k3 &ht RALT k4
@@ -23,7 +24,7 @@
         ss_window: ss_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(LG(N4)) &kp SPACE>;
+            bindings = <&kp LS(LG(NUMBER_4)) &kp SPACE>;
             label = "SS_WINDOW";
         };
 
@@ -155,10 +156,10 @@
 
         num_layer {
             bindings = <
-            &kp PSCRN            &kp N1       &kp N2       &kp N3       &trans  &mmv MOVE_LEFT       &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans
-            &kp LS(LG(N4))       &kp N4       &kp N5       &kp N6       &kp N0  &kp LEFT             &kp DOWN     &kp UP       &kp RIGHT     &trans
-            &ss_window           &kp N7       &kp N8       &kp N9       &trans  &msc SCRL_LEFT       &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &trans
-                                  &trans       &trans       &mkp LCLK     &mkp RCLK
+            &kp PRINTSCREEN       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+            &kp LS(LG(NUMBER_4))  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+            &ss_window            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                                                              &trans        &trans          &mkp LCLK       &mkp RCLK
             >;
         };
 
