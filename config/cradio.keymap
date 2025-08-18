@@ -10,7 +10,7 @@
 #define NUM_MOVE_L 2
 #define TMUX_NVIM_L 3
 #define NAV_L 4
-#define SYSTEM_L 1
+#define SYSTEM_L 5
 
 
 &lt { quick-tap-ms = <200>; };
