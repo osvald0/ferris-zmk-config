@@ -12,6 +12,9 @@
 #define NAV_L 4
 #define SYSTEM_L 1
 
+
+&lt { quick-tap-ms = <200>; };
+
 / {
     behaviors {
         ht: hold_tap {
