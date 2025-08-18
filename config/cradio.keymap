@@ -5,6 +5,12 @@
 
 #define HRML(k1,k2,k3,k4) &ht LALT k1 &ht LGUI k2 &ht LCTRL k3 &ht LSHFT k4 
 #define HRMR(k1,k2,k3,k4) &ht RSHFT k1 &ht RCTRL k2  &ht RGUI k3 &ht RALT k4
+  
+#define SYM_L 1
+#define NUM_MOVE_L 2
+#define TMUX_NVIM_L 3
+#define NAV_L 4
+#define SYSTEM_L 1
 
 / {
     behaviors {
@@ -134,14 +140,38 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <3 2>;
+        };3
+
+        start {
+            bindings = <&kp NUMBER_0>;
+            key-positions = <3 4>;
+        };
+
+        end {
+            bindings = <&kp LG(DOLLAR)>;
+            key-positions = <5 6>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <6 7>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SQT)
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+            &kp Q      &kp W      &kp E      &kp R      &ht 4 T          &ht 4 Y      &kp U      &kp I      &kp O      &kp P
+            HRML(A,        S,         D,         F)     &ht 3 G          &ht 3 H       HRMR(J,        K,         L,        SQT)
+            &kp Z      &kp X      &kp C      &kp V      &ht 5 B          &ht 5 N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+                                            &lt 1 BACKSPACE &lt 2 ESC &lt 2 ENTER  &lt SPACE  
             >;
         };
 
@@ -154,7 +184,7 @@
             >;
         };
 
-        num_layer {
+        num_move_layer {
             bindings = <
             &kp PRINTSCREEN       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
             &kp LS(LG(NUMBER_4))  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
@@ -165,27 +195,27 @@
 
         tmux_nvim_layer {
             bindings = <
-            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-            &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-                                             &trans     &trans         &trans     &trans
+            &trans  &tmux_t_1       &tmux_t_2       &tmux_t_3    &tmux_t_prev    &trans               &trans             &trans             &trans  &trans
+            &trans  &tmux_t_4       &tmux_t_5       &tmux_t_6    &tmux_t_0       &nvim_select_around  &nvim_search_grep  &nvim_search_todo  &trans  &trans
+            &trans  &tmux_t_delete  &tmux_s_switch  &tmux_t_new  &tmux_t_next    &trans               &trans             &trans             &trans  &trans
+                                                    &trans       &trans          &trans               &trans
             >;
         };
 
         nav_layer {
             bindings = <
-            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-            &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-                                             &trans     &trans         &trans     &trans
+            &trans  &trans  &trans  &kp LS(C_AC_ZOOM_IN)   &kp C_VOLUME_UP    &kp LA(LC(LEFT))  &kp LA(LC(DOWN_ARROW))  &kp LA(LC(UP_ARROW))  &kp LA(LC(RIGHT))  &trans
+            &trans  &trans  &trans  &kp LS(C_AC_ZOOM_OUT)  &kp C_VOL_DN       &kp LC(LA(D))     &kp LA(LC(E))           &kp LA(LC(T))         &kp LA(LC(G))      &trans
+            &trans  &trans  &trans  &kp LS(C_AC_ZOOM)      &kp K_MUTE         &trans            &kp LA(LC(ENTER))       &kp LC(LA(C))         &trans             &trans
+                                    &trans                 &trans             &trans            &trans
             >;
         };
 
         system_layer {
             bindings = <
-            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-            &bootloader  &trans     &trans     &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-            &trans     &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
+            &sys_reset  &trans     &trans    &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
+            &bootloader &trans     &trans    &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
+            &trans      &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
                                              &trans     &trans         &trans     &trans
             >;
         };
