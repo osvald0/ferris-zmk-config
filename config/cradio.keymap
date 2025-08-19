@@ -20,6 +20,8 @@
 / {
     behaviors {
         hm: hold_tap {
+           compatible = "zmk,behavior-hold-tap";
+           #binding-cells = <2>;
            flavor = "balanced";
            tapping-term-ms = <140>; 
            quick-tap-ms = <140>;
