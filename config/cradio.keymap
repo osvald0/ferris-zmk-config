@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define HT(mod, key) &ht &kp mod &kp key
-#define LTT(layer, key) &lt &mo layer &kp key   
+#define LTT(layer, key) &ltt &mo layer &kp key   
 #define HRML(k1,k2,k3,k4) HT(LALT, k1) HT(LGUI, k2) HT(LCTRL, k3) HT(LSHFT, k4)
 #define HRMR(k1,k2,k3,k4) HT(RSHFT, k1) HT(RCTRL, k2) HT(RGUI, k3) HT(RALT, k4)
   
@@ -20,18 +20,18 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
           
-        lt: layer_tap_tap_pref {
+        ltt: layer_tap_tap_pref {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_TAP";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&mo>, <&kp>;
