@@ -14,7 +14,8 @@
     flavor = "balanced";
     tapping-term-ms = <185>;   
     quick-tap-ms = <160>;
-    require-prior-idle-ms = <0>;};
+    require-prior-idle-ms = <0>;
+};
 
 / {
     behaviors {
