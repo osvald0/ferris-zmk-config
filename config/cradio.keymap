@@ -19,15 +19,27 @@
 
 / {
     behaviors {
-        hm: hold_tap {
+      hm_l: hold_tap {
           compatible = "zmk,behavior-hold-tap";
           #binding-cells = <2>;
-          flavor = "balanced";
           tapping-term-ms = <250>;
-          quick-tap-ms = <175>;
-          require-prior-idle-ms = <150>;
+          quick-tap-ms = <80>;
+          require-prior-idle-ms = <0>;
+          flavor = "balanced";
+          retro-tap;
           bindings = <&kp>, <&kp>;
-        };
+      };
+
+      hm_r: hold_tap {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          tapping-term-ms = <250>;
+          quick-tap-ms = <80>;
+          require-prior-idle-ms = <0>;
+          flavor = "balanced";
+          retro-tap;
+          bindings = <&kp>, <&kp>;
+      };
     };
 
 
@@ -175,7 +187,7 @@
         default_layer {
             bindings = <
             &kp Q       &kp W       &lt 4 E      &lt 3 R              &lt 4 T           &lt 4 Y        &lt 3 U      &lt 4 I      &kp O       &kp P
-            &hm LALT A  &hm LGUI S  &hm LCTRL D  &hm LSHFT F          &lt 3 G           &lt 3 H        &hm RSHFT J  &hm RCTRL K  &hm LGUI L  &hm LGUI SEMICOLON
+            &hm_l LALT A  &hm_l LGUI S  &hm_l LCTRL D  &hm_l LSHFT F          &lt 3 G           &lt 3 H        &hm_r RSHFT J  &hm_r RCTRL K  &hm_r LGUI L  &hm_r LGUI SEMICOLON
             &kp Z       &kp X       &kp C        &kp V                &lt 5 B           &lt 5 N        &kp M        &kp COMMA    &kp PERIOD  &kp SLASH
                                                 &lt 1 BACKSPACE  &lt 2 ESCAPE    &lt 2 ENTER  &lt 1 SPACE
             >;
