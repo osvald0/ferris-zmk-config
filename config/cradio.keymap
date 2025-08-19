@@ -12,22 +12,18 @@
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <175>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <0>;
-};
+    tapping-term-ms = <185>;   
+    quick-tap-ms = <160>;
+    require-prior-idle-ms = <0>;};
 
 / {
     behaviors {
         hm: hold_tap {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          flavor = "balanced";
-          tapping-term-ms = <175>;
-          quick-tap-ms = <175>;
-          require-prior-idle-ms = <0>;
-          bindings = <&kp>, <&kp>;
-        };
+         flavor = "balanced";
+         tapping-term-ms = <140>; 
+         quick-tap-ms = <140>;
+         require-prior-idle-ms = <0>;
+         hold-trigger-on-release; 
     };
 
 
