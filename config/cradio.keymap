@@ -3,20 +3,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define HT(mod, key) &ht &kp mod &kp key
-#define LTT(layer, key) &ltt &mo layer &kp key   
-#define HRML(k1,k2,k3,k4) HT(LALT, k1) HT(LGUI, k2) HT(LCTRL, k3) HT(LSHFT, k4)
-#define HRMR(k1,k2,k3,k4) HT(RSHFT, k1) HT(RCTRL, k2) HT(RGUI, k3) HT(RALT, k4)
-  
 #define SYM_L 1
 #define NUM_MOVE_L 2
 #define TMUX_NVIM_L 3
 #define NAV_L 4
 #define SYSTEM_L 5
 
+
+&lt { quick-tap-ms = <200>; };
+
 / {
     behaviors {
-        ht: hold_tap {
+        hm: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -24,17 +22,6 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
-        };
-          
-        ltt: layer_tap_tap_pref {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
-            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -182,10 +169,10 @@
 
         default_layer {
             bindings = <
-                &kp Q     &kp W     &kp E     &kp R     LTT(4, T)     LTT(4, Y)     &kp U     &kp I     &kp O     &kp P
-                HRML(A,S,D,F)      LTT(3, G)          LTT(3, H)      HRMR(J,K,L,SQT)
-                &kp Z     &kp X     &kp C     &kp V     LTT(5, B)     LTT(5, N)     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                                        LTT(1, BACKSPACE)   LTT(2, ESC)   LTT(2, ENTER)   LTT(1, SPACE)
+            &kp Q       &kp W       &lt 4 E      &lt 3 R              &kp T           &kp Y        &lt 3 U      &lt 4 I      &kp O       &kp P
+            &hm LALT A  &hm LGUI S  &hm LCTRL D  &hm LSHFT F          &kp G           &kp H        &hm RSHFT J  &hm RCTRL K  &hm LGUI L  &hm LGUI SEMICOLON
+            &kp Z       &kp X       &kp C        &kp V                &kp B           &kp N        &kp M        &kp COMMA    &kp PERIOD  &kp SLASH
+                                                &lt NAV_L BACKSPACE  &lt 2 ESCAPE    &lt 2 ENTER  &lt 1 SPACE
             >;
         };
 
