@@ -182,10 +182,10 @@
 
         default_layer {
             bindings = <
-                &kp Q     &kp W     &kp E     &kp R     LT(LALT, T)     LT(LALT, Y)     &kp U     &kp I     &kp O     &kp P
-                HRML(A,S,D,F)      LT(LALT, G)          LT(LALT, H)      HRMR(J,K,L,SQT)
-                &kp Z     &kp X     &kp C     &kp V     LT(LALT, B)     LT(LALT, N)     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                                        LT(SYM_L, BACKSPACE)   LT(NUM_MOVE_L, ESC)   LT(NUM_MOVE_L, ENTER)   LT(NAV_L, SPACE)
+                &kp Q     &kp W     &kp E     &kp R     LT(4, T)     LT(4, Y)     &kp U     &kp I     &kp O     &kp P
+                HRML(A,S,D,F)      LT(3, G)          LT(3, H)      HRMR(J,K,L,SQT)
+                &kp Z     &kp X     &kp C     &kp V     LT(5, B)     LT(5, N)     &kp M     &kp COMMA &kp DOT   &kp FSLH
+                                                        LT(1, BACKSPACE)   LT(2, ESC)   LT(2, ENTER)   LT(1, SPACE)
             >;
         };
 
