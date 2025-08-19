@@ -4,7 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define HT(mod, key) &ht &kp mod &kp key
-#define LT(layer, key) &lt &mo layer &kp key   
+#define LTT(layer, key) &lt &mo layer &kp key   
 #define HRML(k1,k2,k3,k4) HT(LALT, k1) HT(LGUI, k2) HT(LCTRL, k3) HT(LSHFT, k4)
 #define HRMR(k1,k2,k3,k4) HT(RSHFT, k1) HT(RCTRL, k2) HT(RGUI, k3) HT(RALT, k4)
   
@@ -182,10 +182,10 @@
 
         default_layer {
             bindings = <
-                &kp Q     &kp W     &kp E     &kp R     LT(4, T)     LT(4, Y)     &kp U     &kp I     &kp O     &kp P
-                HRML(A,S,D,F)      LT(3, G)          LT(3, H)      HRMR(J,K,L,SQT)
-                &kp Z     &kp X     &kp C     &kp V     LT(5, B)     LT(5, N)     &kp M     &kp COMMA &kp DOT   &kp FSLH
-                                                        LT(1, BACKSPACE)   LT(2, ESC)   LT(2, ENTER)   LT(1, SPACE)
+                &kp Q     &kp W     &kp E     &kp R     LTT(4, T)     LTT(4, Y)     &kp U     &kp I     &kp O     &kp P
+                HRML(A,S,D,F)      LTT(3, G)          LTT(3, H)      HRMR(J,K,L,SQT)
+                &kp Z     &kp X     &kp C     &kp V     LTT(5, B)     LTT(5, N)     &kp M     &kp COMMA &kp DOT   &kp FSLH
+                                                        LTT(1, BACKSPACE)   LTT(2, ESC)   LTT(2, ENTER)   LTT(1, SPACE)
             >;
         };
 
