@@ -9,7 +9,6 @@
 #define NAV_L 4
 #define SYSTEM_L 5
 
-
 &lt {
     flavor = "balanced";
     tapping-term-ms = <250>;
@@ -19,29 +18,32 @@
 
 / {
     behaviors {
-      hm_l: hold_tap {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick-tap-ms = <80>;
-          require-prior-idle-ms = <0>;
-          flavor = "balanced";
-          retro-tap;
-          bindings = <&kp>, <&kp>;
-      };
+        hm_l: hold_tap_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <80>;
+            require-prior-idle-ms = <0>;
+            flavor = "balanced";
+            retro-tap;
+            bindings = <&kp>, <&kp>;
 
-      hm_r: hold_tap {
-          compatible = "zmk,behavior-hold-tap";
-          #binding-cells = <2>;
-          tapping-term-ms = <250>;
-          quick-tap-ms = <80>;
-          require-prior-idle-ms = <0>;
-          flavor = "balanced";
-          retro-tap;
-          bindings = <&kp>, <&kp>;
-      };
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 32 33>;
+        };
+
+        hm_r: hold_tap_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <80>;
+            require-prior-idle-ms = <0>;
+            flavor = "balanced";
+            retro-tap;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31>;
+        };
     };
-
 
     macros {
         ss_window: ss_window {
@@ -65,7 +67,7 @@
             label = "TMUX_T_1";
         };
 
-       tmux_t_2: tmux_t_2 {
+        tmux_t_2: tmux_t_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(B) &kp NUMBER_2>;
@@ -186,55 +188,55 @@
 
         default_layer {
             bindings = <
-            &kp Q       &kp W       &lt 4 E      &lt 3 R              &lt 4 T           &lt 4 Y        &lt 3 U      &lt 4 I      &kp O       &kp P
-            &hm_l LALT A  &hm_l LGUI S  &hm_l LCTRL D  &hm_l LSHFT F          &lt 3 G           &lt 3 H        &hm_r RSHFT J  &hm_r RCTRL K  &hm_r LGUI L  &hm_r LGUI SEMICOLON
-            &kp Z       &kp X       &kp C        &kp V                &lt 5 B           &lt 5 N        &kp M        &kp COMMA    &kp PERIOD  &kp SLASH
-                                                &lt 1 BACKSPACE  &lt 2 ESCAPE    &lt 2 ENTER  &lt 1 SPACE
+&kp Q         &kp W         &lt 4 E        &lt 3 R          &lt 4 T         &lt 4 Y      &lt 3 U        &lt 4 I        &kp O         &kp P
+&hm_l LALT A  &hm_l LGUI S  &hm_l LCTRL D  &hm_l LSHFT F    &lt 3 G         &lt 3 H      &hm_r RSHFT J  &hm_r RCTRL K  &hm_r LGUI L  &hm_r LGUI SEMICOLON
+&kp Z         &kp X         &kp C          &kp V            &lt 5 B         &lt 5 N      &kp M          &kp COMMA      &kp PERIOD    &kp SLASH
+                                           &lt 1 BACKSPACE  &lt 2 ESCAPE    &lt 2 ENTER  &lt 1 SPACE
             >;
         };
 
         sym_layer {
             bindings = <
-            &trans         &kp TILDE       &kp PLUS          &kp LEFT_BRACE        &kp GRAVE          &kp AMPERSAND  &kp RIGHT_BRACE        &kp EQUAL          &kp PERCENT  &trans
-            &kp BACKSLASH  &kp UNDERSCORE  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp ASTERISK   &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp MINUS    &kp PIPE
-            &trans         &trans          &kp CARET         &kp LEFT_BRACKET      &kp DOLLAR         &kp AT_SIGN    &kp RIGHT_BRACKET      &kp HASH           &trans       &trans
-                                                            &trans                &trans             &trans         &trans
+&trans         &kp TILDE       &kp PLUS          &kp LEFT_BRACE        &kp GRAVE          &kp AMPERSAND  &kp RIGHT_BRACE        &kp EQUAL          &kp PERCENT  &trans
+&kp BACKSLASH  &kp UNDERSCORE  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp ASTERISK   &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp MINUS    &kp PIPE
+&trans         &trans          &kp CARET         &kp LEFT_BRACKET      &kp DOLLAR         &kp AT_SIGN    &kp RIGHT_BRACKET      &kp HASH           &trans       &trans
+                                                 &trans                &trans             &trans         &trans
             >;
         };
 
         num_move_layer {
             bindings = <
-            &kp PRINTSCREEN       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-            &kp LS(LG(NUMBER_4))  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-            &ss_window            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-                                                              &trans        &trans          &mkp LCLK       &mkp RCLK
+&kp PRINTSCREEN       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&kp LS(LG(NUMBER_4))  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+&ss_window            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &trans          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                                                  &trans        &trans          &mkp LCLK       &mkp RCLK
             >;
         };
 
         tmux_nvim_layer {
             bindings = <
-            &trans  &tmux_t_1       &tmux_t_2       &tmux_t_3    &tmux_t_prev    &trans               &trans             &trans             &trans  &trans
-            &trans  &tmux_t_4       &tmux_t_5       &tmux_t_6    &tmux_t_0       &nvim_select_around  &nvim_search_grep  &nvim_search_todo  &trans  &trans
-            &trans  &tmux_t_delete  &tmux_s_switch  &tmux_t_new  &tmux_t_next    &trans               &trans             &trans             &trans  &trans
-                                                    &trans       &trans          &trans               &trans
+&trans  &tmux_t_1       &tmux_t_2       &tmux_t_3    &tmux_t_prev    &trans               &trans             &trans             &trans  &trans
+&trans  &tmux_t_4       &tmux_t_5       &tmux_t_6    &tmux_t_0       &nvim_select_around  &nvim_search_grep  &nvim_search_todo  &trans  &trans
+&trans  &tmux_t_delete  &tmux_s_switch  &tmux_t_new  &tmux_t_next    &trans               &trans             &trans             &trans  &trans
+                                        &trans       &trans          &trans               &trans
             >;
         };
 
         nav_layer {
             bindings = <
-            &trans  &trans  &trans  &kp LS(C_AC_ZOOM_IN)   &kp C_VOLUME_UP    &kp LA(LC(LEFT))  &kp LA(LC(DOWN_ARROW))  &kp LA(LC(UP_ARROW))  &kp LA(LC(RIGHT))  &trans
-            &trans  &trans  &trans  &kp LS(C_AC_ZOOM_OUT)  &kp C_VOL_DN       &kp LC(LA(D))     &kp LA(LC(E))           &kp LA(LC(T))         &kp LA(LC(G))      &trans
-            &trans  &trans  &trans  &kp LS(C_AC_ZOOM)      &kp K_MUTE         &trans            &kp LA(LC(ENTER))       &kp LC(LA(C))         &trans             &trans
-                                    &trans                 &trans             &trans            &trans
+&trans  &trans  &trans  &kp LS(C_AC_ZOOM_IN)   &kp C_VOLUME_UP    &kp LA(LC(LEFT))  &kp LA(LC(DOWN_ARROW))  &kp LA(LC(UP_ARROW))  &kp LA(LC(RIGHT))  &trans
+&trans  &trans  &trans  &kp LS(C_AC_ZOOM_OUT)  &kp C_VOL_DN       &kp LC(LA(D))     &kp LA(LC(E))           &kp LA(LC(T))         &kp LA(LC(G))      &trans
+&trans  &trans  &trans  &kp LS(C_AC_ZOOM)      &kp K_MUTE         &trans            &kp LA(LC(ENTER))       &kp LC(LA(C))         &trans             &trans
+                        &trans                 &trans             &trans            &trans
             >;
         };
 
         system_layer {
             bindings = <
-            &sys_reset  &trans     &trans    &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
-            &bootloader &trans     &trans    &trans    &bt BT_SEL 1    &trans     &trans     &trans     &trans    &bootloader
-            &trans      &trans     &trans    &bt BT_CLR &bt BT_SEL 2    &trans     &trans     &trans     &trans     &trans
-                                             &trans     &trans         &trans     &trans
+&sys_reset   &trans  &trans  &trans      &bt BT_SEL 0    &trans  &trans  &trans  &trans  &sys_reset
+&bootloader  &trans  &trans  &trans      &bt BT_SEL 1    &trans  &trans  &trans  &trans  &bootloader
+&trans       &trans  &trans  &bt BT_CLR  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &trans
+                             &trans      &trans          &trans  &trans
             >;
         };
     };
