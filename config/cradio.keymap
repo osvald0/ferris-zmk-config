@@ -200,7 +200,7 @@
 &trans         &kp TILDE       &kp PLUS          &kp LEFT_BRACE        &kp GRAVE          &kp AMPERSAND  &kp RIGHT_BRACE        &kp EQUAL          &kp PERCENT  &trans
 &kp BACKSLASH  &kp UNDERSCORE  &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp ASTERISK   &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp MINUS    &kp PIPE
 &trans         &trans          &kp CARET         &kp LEFT_BRACKET      &kp DOLLAR         &kp AT_SIGN    &kp RIGHT_BRACKET      &kp HASH           &trans       &trans
-                                                 &trans                &trans             &trans         &trans
+                                                 &trans                &trans             &kp CAPSLOCK   &trans
             >;
         };
 
