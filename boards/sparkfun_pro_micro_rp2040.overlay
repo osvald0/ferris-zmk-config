@@ -1,13 +1,5 @@
-
-&uart1 {
-    status = "okay";
-    current-speed = <115200>;
-};
+&uart1 { status = "okay"; current-speed = <115200>; };
 
  / {
-     wired_split {
-         compatible = "zmk,wired-split";
-         device = <&uart1>;
-     };
+     wired_split { compatible = "zmk,wired-split"; device = <&uart1>; /* or &uart1 */ };
  };
-
