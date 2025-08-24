@@ -1,4 +1,4 @@
-&pro_micro_serial {
+&uart0 {
     status = "okay";
     current-speed = <115200>;
 };
@@ -6,7 +6,6 @@
  / {
      wired_split {
          compatible = "zmk,wired-split";
-         device = <&pro_micro_serial>;
+         device = <&uart0>;
      };
  };
-
