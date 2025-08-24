@@ -1,6 +1,7 @@
-&uart0 { status = "okay"; current-speed = <115200>; };
-
-&zmk_split {
-    transport = "wired";
-    wired { label = "split-uart"; uart = &uart0; };
+/ {
+    wired_split {
+        compatible = "zmk,wired-split";
+        device = <&pro_micro_serial>;
+    };
 };
+
