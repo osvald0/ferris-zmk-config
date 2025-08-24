@@ -1,7 +1,12 @@
-/ {
-    wired_split {
-        compatible = "zmk,wired-split";
-        device = <&pro_micro_serial>;
-    };
+&pro_micro_serial {
+    status = "okay";
+    current-speed = <115200>;
 };
+
+ / {
+     wired_split {
+         compatible = "zmk,wired-split";
+         device = <&pro_micro_serial>;
+     };
+ };
 
